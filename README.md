@@ -15,27 +15,6 @@
 - 상태 머신 디자인 패턴: 복잡한 LED 제어 로직(짧은 클릭, 긴 클릭, 더블 클릭 등)을 상태 머신 드라이버(state_machine.ko)로 구현하여 코드의 확장성과 가독성을 높입니다.
 
 ---
-# Directory Structure
-.
-├── /bin/               # toy_system, toy-be 등 최종 실행 파일
-├── /drivers/           # 디바이스 드라이버 소스 코드 (engine, sensor 등)
-│   ├── engine/
-│   ├── sensor/
-│   ├── simple_io/
-│   └── state_machine/
-├── /kernel/            # 커널 관련 스크립트 및 수정 사항
-├── /system/            # 시스템 애플리케이션 소스 코드
-│   ├── engine/
-│   ├── hal/
-│   ├── system/
-│   └── ui/
-├── /toy-api/           # 웹 프론트엔드 API (Javascript)
-├── /toy-be/            # 웹 백엔드 (Go)
-├── /toy-fe/            # 웹 프론트엔드 (React + Typescript)
-├── buildroot/          # 임베디드 리눅스 빌드 시스템
-└── Makefile            # 프로젝트 전체 빌드를 위한 최상위 Makefile
-
----
 # Environment
 - 타겟 하드웨어: Raspberry Pi 4
 - 호스트 OS: Ubuntu 22.04 or higher
