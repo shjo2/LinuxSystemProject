@@ -118,8 +118,6 @@ make
 ### **Makefile**:
 프로젝트를 다시 빌드하려면 빌드루트의 커널 컴파일 이후 프로젝트에 존재하는 makefile의 내용을 아래처럼 buildroot에 대한 경로를 바꿔줘야합니다.
 
-You need to modify Makefile. Set the paths for **`BUILDROOT_DIR`** and **`TOOLCHAIN_DIR`** as follows:
-
 ```Makefile
 # Modify the top-level Makefile
 BUILDROOT_DIR = /path/to/buildroot   # buildroot 경로 설정
