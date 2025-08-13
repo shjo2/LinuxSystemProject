@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# Start toy project....
+#
+
+case "$1" in
+  start)
+        printf "Starting toy project: "
+        modprobe i2c-bcm2835
+        modprobe i2c-dev
+        insmod sensor.ko
+        insmod engine.ko
+        cd /root
+        sh ./toy_system
+        [ $? = 0 ] && echo "OK" || echo "FAIL"
+        ;;
+  stop)
+        printf "Stopping toy project: "
+        [ $? = 0 ] && echo "OK" || echo "FAIL"
+        ;;
+  restart|reload)
+        "$0" stop
+        "$0" start
+        ;;
+  *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+esac
+
+exit $?
+
